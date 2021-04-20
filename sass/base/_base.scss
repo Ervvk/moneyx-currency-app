@@ -10,14 +10,32 @@ html {
     // This defines what 1rem is
     font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 
+    @include setBreakpoint(tab) {
+        font-size: 75%;
+      }
+      @include setBreakpoint(desktop) {
+        font-size: 90%;
+      }
+    
  
 }
 
 body {
     box-sizing: border-box;
     max-width: 100vw;
-    overflow-x: hidden
+    overflow-x: hidden;
+    background-color: var(--color-layout-primary);
+
 
 
    
+}
+
+.main-part{
+    width:100%;
+    position: relative;
+    z-index:1;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
 }

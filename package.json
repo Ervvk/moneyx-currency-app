@@ -4,6 +4,7 @@
   "description": "",
   "main": "snippets.js",
   "dependencies": {
+    "currency-flags": "^3.2.0",
     "node-sass": "^5.0.0"
   },
   "devDependencies": {

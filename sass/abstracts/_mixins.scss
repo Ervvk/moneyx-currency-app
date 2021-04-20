@@ -3,8 +3,11 @@
     @if $screenwidth ==  {
         @media only screen and (max-width: 37.5em) { @content };    //600px
     }*/
-    @if $screenwidth == desktop {
+    @if $screenwidth == tab {
         @media only screen and (min-width:800px) { @content };    
+    }
+    @if $screenwidth == desktop {
+        @media only screen and (min-width:1400px) { @content };    
     }
        
 

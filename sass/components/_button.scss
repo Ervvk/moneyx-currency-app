@@ -1,15 +1,34 @@
-.button--big{
+.button--main{
     border:none;
-    background-color: var(--color-component-dark);
-    font-size: 2em;
-    color: var(--color-layout-primary);
-    width:30rem;
-    height: 6rem;
-    border-radius: 1rem;
+ 
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--color-font-strong);
+    width:100%;
+    max-width: 70rem;
+    height: 5.5rem;
+ 
+    border: solid 1px var(--color-font-primary);
     //do zmiany margin-left
-    margin-left: 11rem;
+    margin-bottom: var(--layout-margin-mini);
     &:hover{
         cursor: pointer;
         background-color: var(--color-component-light);
     }
+}
+
+.button__icon-wrap{
+    height: 4rem;
+   width:4rem;
+
+    background-color: var(--color-component-dark);
+    border-radius: 50%;
+   @include flexCentering(row);
+}
+
+.button__icon{
+width:2rem;
+height:3rem;
+fill: var(--color-layout-secondary);
+
 }

@@ -1,0 +1,26 @@
+:root {
+    //COLORS
+    --color-component-dark: #170da5;
+    --color-component-light: #2b46bd;
+    --color-layout-primary: whitesmoke;
+    --color-layout-secondary: white;
+    --color-font-strong: #000000;
+    --color-font-light: rgba(0, 0, 0, 0.55);
+    --color-change-increase: #379104;
+    --color-change-decrease: #c40802;
+
+    //MARGINS
+    --layout-margin-mini:1em;
+    --layout-margin-small:2.5em;
+    --layout-margin-medium:5em;
+    --layout-margin-big:7em;
+
+// BREAKPOINTS
+$bp-xl: 1200px;   // 1200px
+$bp-l: 1000px;   // 1000px
+--bp-m: 800px;    // 800px;
+$bp-s: 600px;   // 600px;
+
+    
+    
+}

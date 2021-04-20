@@ -1,0 +1,12 @@
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    line-height: 1.7;
+ 
+}
+h1{ color: var(--color-component-dark);
+    margin: var(--layout-margin-mini);
+    font-weight: 900;
+    font-size: 7rem;
+}

@@ -1,0 +1,15 @@
+.button--big{
+    border:none;
+    background-color: var(--color-component-dark);
+    font-size: 2em;
+    color: var(--color-layout-primary);
+    width:30rem;
+    height: 6rem;
+    border-radius: 1rem;
+    //do zmiany margin-left
+    margin-left: 11rem;
+    &:hover{
+        cursor: pointer;
+        background-color: var(--color-component-light);
+    }
+}

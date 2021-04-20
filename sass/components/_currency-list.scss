@@ -1,0 +1,28 @@
+.currency-list{
+    margin-top: var(--layout-margin-medium);
+    height: 60rem;
+    width: 100vw;
+    max-width: 80rem;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  
+    &__name {
+      width: 12rem;
+      position: absolute;
+      top: calc(-1.5 * var(--layout-margin-small));
+      color: var(--color-font-light);
+  
+      &--left {
+        left: 0.5em;
+      }
+  
+      &--right {
+        right: 0.5em;
+      }
+    }
+  }
+  

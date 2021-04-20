@@ -1,0 +1,16 @@
+.svg-dropdown{
+    transform: rotate(180deg) translateY(.4em);
+    height:2rem;
+    width:2rem;
+}
+
+
+.converter__selectbox{
+    cursor:pointer;
+   @include flexCentering(row);
+   justify-content: space-around;
+    width:10rem;
+    height: 3.5rem;
+    background-color: pink;
+
+}

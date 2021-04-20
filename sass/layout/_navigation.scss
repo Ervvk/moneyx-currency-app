@@ -6,6 +6,9 @@
 }
 
 .main-nav {
+ 
+
+z-index: 5;
   background-color: var(--color-layout-secondary);
   height: var(--height-component-medium);
 
@@ -25,18 +28,19 @@ width:83%;
 }
 
 .sidebar {
-  border-left: 1px solid var(--color-font-light);
+
   background-color: var(--color-layout-primary);
-  position: absolute;
-  z-index: 5;
+  position: fixed;
+
+  z-index: 7;
   top: 0;
   right: 0;
   width: 100%;
   height: 100vh;
   transform: translateX(300vw);
-  transition: 0.4s ease-out;
+  transition: .4s ease-out;
 
- 
+ border:none;
 
   &--active { 
 
@@ -45,7 +49,7 @@ width:83%;
 }
 
 .sidebar__nav {
-  margin-top: var(--layout-margin-big);
+  margin-top: calc(2*var(--layout-margin-big));
 
   @include flexCentering(row);
  
@@ -58,12 +62,18 @@ width:83%;
 
 
   &__el {
+    display: block;
+    text-decoration: none;
+
+    width: 100vw;
       cursor:pointer;
-      font-size: 2em;
+      font-size: 3em;
       color: var(--color-font-light);
-     // padding-left: var(--layout-margin-small);
-      //padding-top:  var(--layout-margin-mini);
-      padding:  calc(var(--layout-margin-mini)/2);
+      padding-left: var(--layout-margin-small);
+      padding-top:  calc(var(--layout-margin-mini)/2);
+      padding-bottom:  calc(var(--layout-margin-mini)/2);
+
+
       &:hover{
         color: var(--color-font-primary);
         background-color: lighten(whitesmoke, 2%);
@@ -71,3 +81,29 @@ width:83%;
 
   }
 }
+
+.footer{
+  margin-top:var(--layout-margin-small);
+  height:7.5rem;
+  @include flexCentering(row);
+}
+/*
+.button__icon-wrap{
+    height: 4rem;
+   width:4rem;
+
+    background-color: var(--color-component-dark);
+    border-radius: 50%;
+   @include flexCentering(row);
+}
+
+
+/
+.button__icon{
+width:2rem;
+height:3rem;
+fill: var(--color-layout-secondary);
+
+}
+
+*/

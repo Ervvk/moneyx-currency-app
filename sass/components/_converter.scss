@@ -1,0 +1,22 @@
+.converter{
+    margin-top: var(--layout-margin-medium);
+    background-color: #fff;
+    width:80rem;
+    height: 30rem;
+    @include flexCentering(column);
+    justify-content: space-evenly;
+
+}
+
+.converter__row{
+    width:35rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.converter__input{
+    width:23rem;
+    height: 3.5rem;
+    font-size:1.6rem;
+
+}

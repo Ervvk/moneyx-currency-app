@@ -1,13 +1,16 @@
 
-// hamburger sidebar code
-const btnHamburger = document.querySelector('.hamburger-btn');
-const sidebar = document.querySelector('.sidebar');
+import {hamburgerScript,getCurrencyData} from "./shared.js"
 
-
-const burgerClick = function(){
-    sidebar.classList.toggle('sidebar--active');
-
+function init(){
+    hamburgerScript();
+    getCurrencyData();
 }
 
-btnHamburger.addEventListener('click', burgerClick);
+
+
+document.addEventListener('DOMContentLoaded', init());
+
+
+
+
 

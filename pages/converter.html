@@ -12,8 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500;700&display=swap"
       rel="stylesheet"
     />
-   
-    <script defer src="/scripts/main.js"></script>
+    <script defer type="module" src="/scripts/converter.js"></script>
+    
 </head>
 <body>
     <body>
@@ -46,28 +46,76 @@
             <div class="converter__heading">
               <h1>Your currency converter</h1>
             </div>
-<div class="converter__row">
+            <div class="converter__rows-wrap">
+<div class="converter__row converter__row--from">
 
-  <div class="converter__selectbox converter__selectbox--from">
+  <div  tabindex="1" class="converter__selectbox converter__selectbox--from">
     <div class="selectbox__currency selectbox__currency--from">CHR</div>
     <svg class = "svg-dropdown"><use xlink:href="/sprite.svg#icon-ctrl"></svg> 
 
+      
+
   </div>
+  <div class="selectbox__dropdown selectbox__dropdown--from">
+    <div class="dropdown__input-wrapper">
+    <input placeholder="enter the currency" class = "dropdown__input" type="text">
+    <svg class = "svg-search"><use xlink:href="/sprite.svg#icon-search"></svg> 
+  </div>
+    <ul class="dropdown__list dropdown__list--from">
+
+      
+
+                                                        
+
+
+    </ul>
+  </div>
+
+
+
 <input id ="amount-from" class="converter__input converter__input--from" type="text">
 </div>
 
-<div class="converter__row">
-  <div class="converter__selectbox converter__selectbox--to">
-    <div class="selectbox__currency selectbox__currency--from">USD</div>
+
+
+<div class="converter__row converter__row--to">
+  <div tabindex="1" class="converter__selectbox converter__selectbox--to">
+    <div class="selectbox__currency selectbox__currency--from">  USD </div>
     <svg class = "svg-dropdown"><use xlink:href="/sprite.svg#icon-ctrl"></svg> 
   </div>
   
+  <div class="selectbox__dropdown selectbox__dropdown--to">
+    <div class="dropdown__input-wrapper">
+    <input placeholder="enter the currency" class = "dropdown__input" type="text">
+    <svg class = "svg-search"><use xlink:href="/sprite.svg#icon-search"></svg> 
+  </div>
+
+    <ul class="dropdown__list dropdown__list--to">
+
+  
+    </ul>
+  </div>
+  
+  
   <input id ="amount-to" class="converter__input converter__input--to" type="text">
 </div>
-            
-            
 
 
+
+<div class="converter__swap-wrap">
+  <button class = "convert__button button-round ">
+    <svg class = "svg-swap"><use xlink:href="/sprite.svg#icon-swap_vert"></svg> 
+
+  </button>
+</div>
+
+
+
+
+</div>   
+
+
+              
 
           </div>
         

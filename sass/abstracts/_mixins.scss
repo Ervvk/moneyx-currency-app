@@ -22,3 +22,24 @@
     }
 }
 
+
+@mixin displayVisibility($state){
+    @if $state == hidden {
+    opacity: .0;
+    visibility: hidden;
+
+    }
+
+    @if $state == visible {
+    opacity: 1.0;
+    visibility: visible;
+        
+    }
+    
+}
+
+@mixin dotsOverflow{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

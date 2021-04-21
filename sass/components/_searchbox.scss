@@ -1,16 +1,114 @@
-.svg-dropdown{
-    transform: rotate(180deg) translateY(.4em);
-    height:2rem;
-    width:2rem;
+
+
+.converter__selectbox {
+  cursor: pointer;
+  @include flexCentering(row);
+  justify-content: space-around;
+  width: 10rem;
+  height: var(--height-imput-medium);
+  border: 1px solid var(--color-font-light);
+  background-color: #fff;
+}
+.converter__selectbox--from {
+  position: relative;
+  z-index: 1;
+}
+
+.selectbox__dropdown {
+  //display: none;
+  @include displayVisibility(hidden);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 9px 16px -4px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 20;
+  width: 50vw;
+  @include setBreakpoint(tab){
+    width: 25rem;
+  }
+  height: 30rem;
+  background-color: var(--color-layout-primary);
+transition: .2s ease;
+
+    top: 4.6em;
+    left: 0;
+ 
+
+ 
+   
+ 
+}
+
+.dropdown__input-wrapper {
+  overflow-x: hidden;
+  background-color: var(--color-layout-secondary);
+  width: 100%;
+ display:flex;
+ align-items: center;
+justify-content: center;
+  &:focus {
+    border: 1px solid black;
+  }
+}
+
+.dropdown__input {
+  overflow:hidden;
+  justify-self: flex-start;
+  padding: var(--layout-margin-mini);
+  transform: translateX(-1em);
+  border: 1px solid rgb(255, 255, 255);
+  width: 80%;
+  height: 50px;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 
-.converter__selectbox{
-    cursor:pointer;
-   @include flexCentering(row);
-   justify-content: space-around;
-    width:10rem;
-    height: 3.5rem;
-    background-color: pink;
+
+
+
+
+
+.selectbox__dropdown--show {
+  @include displayVisibility(visible);
+}
+
+.dropdown__list{
+  height:calc(100% - 50px);
+  overflow-y: scroll;
+}
+
+
+.dropdown__el{
+  width:100%;
+  padding: var(--layout-margin-small);
+ 
+  height: var(--height-imput-medium);
+  display: flex;
+  align-items: center;
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+&:hover{
+  cursor: pointer;
+  background-color: rgb(224, 224, 224);
+}
+
+}
+
+
+.dropdown__el__names{
+  margin-left: var(--layout-margin-small);
+}
+
+.dropdown__el__code{
+font-size: 1.2rem;
+}
+
+.dropdown__el__full-name{
+ 
+max-width:10rem;
+color: var(--color-font-light);
+@include dotsOverflow;
 
 }

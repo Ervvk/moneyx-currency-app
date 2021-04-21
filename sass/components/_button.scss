@@ -1,21 +1,53 @@
-.button--main{
-    display: block;
-    border:none;
-    font-size: 1.45rem;
-    font-weight: 500;
-    color: var(--color-layout-primary);
-    background-color:var( --color-component-dark);
-   width: 30rem;
-    height: 3.85rem;
- margin-right: var(--layout-margin-small);
-@include flexCentering(row);
-    border-radius: .3rem;
-    //do zmiany margin-left
+.button{
 
-    //@include brea
-    //margin-bottom: var(--layout-margin-small);
-    &:hover{
-        cursor: pointer;
-        background-color: var(--color-component-light);
-    }
+  display: block;
+  border: none;
+  font-size: 1.45rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-layout-primary);
+  background-color: var(--color-component-dark);
+  
+  height: 3.85rem;
+  margin-right: var(--layout-margin-small);
+  border-radius: 0.3rem;
+  @include flexCentering(row);
+
+  &--main{
+    width: 30rem;
+  }
+
+
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-component-light);
+  }
+
+}
+
+
+.button-round{
+
+    
+  display: block;
+  border: none;
+  background-color: var(--color-layout-primary);
+  @include flexCentering(row);
+  border-radius: 50%;
+  height:4.5rem;
+  width:4.5rem;
+
+  
+  &:hover {
+    cursor: pointer;
+    color: var(--color-font-strong);
+
+    //background-color: var(--color-component-light);
+  }
+
+}
+
+.button-round:hover  .svg-swap{
+fill:var(--color-component-light);
 }

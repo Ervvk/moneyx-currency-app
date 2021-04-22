@@ -119,6 +119,9 @@ svg {
   .button-round:hover {
     cursor: pointer;
     color: var(--color-font-strong); }
+  .button-round:focus {
+    outline: none;
+    border: 0.5px solid var(--color-component-light); }
 
 .button-round:hover .svg-swap {
   fill: var(--color-component-light); }
@@ -219,7 +222,10 @@ svg {
   width: 10rem;
   height: var(--height-imput-medium);
   border: 1px solid var(--color-font-light);
+  border-radius: 2px;
   background-color: #fff; }
+  .converter__selectbox:focus {
+    border: 1px solid var(--color-component-dark); }
 
 .converter__selectbox--from {
   position: relative;
@@ -229,6 +235,7 @@ svg {
   opacity: .0;
   visibility: hidden;
   border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
   box-shadow: 0 9px 16px -4px rgba(0, 0, 0, 0.4);
   position: absolute;
   z-index: 20;
@@ -305,7 +312,7 @@ svg {
   overflow: hidden; }
 
 .converter {
-  box-shadow: 0 9px 16px -4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px -4px rgba(0, 0, 0, 0.4);
   margin-top: var(--layout-margin-medium);
   background-color: #fff;
   width: 100vw;
@@ -342,11 +349,17 @@ svg {
   justify-content: space-between; }
 
 .converter__input {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  text-align: right;
   padding: var(--layout-margin-mini);
   width: 100%;
   min-width: 12rem;
   height: var(--height-imput-medium);
-  font-size: 1.6rem; }
+  font-size: 1.4rem; }
+  .converter__input:focus {
+    outline: none;
+    border: 1px solid var(--color-component-dark); }
   .converter__input-wrapper {
     position: relative;
     width: 65%; }
@@ -357,12 +370,9 @@ svg {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -.9em;
+    top: -1.9em;
     left: 2em;
     background-color: var(--color-layout-secondary); }
-    .converter__input-label--disabled {
-      background: linear-gradient(to top, rgba(240, 235, 235, 0.616) 50%, white 50%);
-      width: 4rem; }
 
 .converter__swap-wrap {
   position: absolute;

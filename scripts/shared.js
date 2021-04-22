@@ -1,3 +1,4 @@
+export const currencyData = JSON.parse(localStorage.getItem("todayRatesData"));
 
 
 export const getCurrencyData = async function(){
@@ -8,7 +9,7 @@ export const getCurrencyData = async function(){
 
     // selected data ready to use in app
     const todayRatesData = data[1].rates;
-    todayRatesData.unshift({currency:"złoty (Polska)", code:"PLN",mid:1.0});
+    todayRatesData.unshift({currency:"złoty (Polska)", code:"PLN",mid:1.0000});
    
   
  

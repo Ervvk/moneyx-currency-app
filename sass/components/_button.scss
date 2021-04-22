@@ -48,9 +48,13 @@
 
     //background-color: var(--color-component-light);
   }
+  &:focus{
+    outline:none;
+    border:.5px solid var(--color-component-light);
+  }
 
 }
 
-.button-round:hover  .svg-swap{
+.button-round:hover .svg-swap{
 fill:var(--color-component-light);
 }

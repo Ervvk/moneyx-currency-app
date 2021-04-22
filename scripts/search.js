@@ -1,14 +1,21 @@
+import {currencyData} from "./shared.js"
+
 const dropdownFrom = document.querySelector(".selectbox__dropdown--from");
 const dropdownTo = document.querySelector(".selectbox__dropdown--to");
-const selectDropdownFrom = document.querySelector(".converter__selectbox--from");
-const selectDropdownTo = document.querySelector(".converter__selectbox--to");
+ const selectDropdownFrom = document.querySelector(".converter__selectbox--from");
+ const selectDropdownTo = document.querySelector(".converter__selectbox--to");
 const dropdownListFrom = document.querySelector(".dropdown__list--from");
 const dropdownListTo = document.querySelector(".dropdown__list--to");
 const dropdownInputFrom = document.querySelector(".dropdown__input--from");
 const dropdownInputTo = document.querySelector(".dropdown__input--to");
 
-const currencyData = JSON.parse(localStorage.getItem("todayRatesData"));
+//const currencyData = JSON.parse(localStorage.getItem("todayRatesData"));
 console.log(currencyData);
+
+
+
+
+
 
 const searchBoxSetting = function () {
   //get data to fill dropdown

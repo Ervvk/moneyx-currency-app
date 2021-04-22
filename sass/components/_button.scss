@@ -8,15 +8,18 @@
   color: var(--color-layout-primary);
   background-color: var(--color-component-dark);
   
-  height: 3.85rem;
-  margin-right: var(--layout-margin-small);
+  height: 3.5rem;
+ 
   border-radius: 0.3rem;
   @include flexCentering(row);
 
   &--main{
+    margin-right: var(--layout-margin-small);
     width: 30rem;
   }
-
+&--calc{
+  width:15rem;
+}
 
 
   &:hover {

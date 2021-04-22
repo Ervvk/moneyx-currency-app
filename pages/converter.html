@@ -44,7 +44,7 @@
         <main class="main-part">
           <div class="converter">
             <div class="converter__heading">
-              <h1>Your currency converter</h1>
+              <h1>Twój kalkulator walutowy</h1>
             </div>
             <div class="converter__rows-wrap">
 <div class="converter__row converter__row--from">
@@ -58,7 +58,7 @@
   </div>
   <div class="selectbox__dropdown selectbox__dropdown--from">
     <div class="dropdown__input-wrapper">
-    <input placeholder="enter the currency" class = "dropdown__input" type="text">
+    <input placeholder="podaj walutę" class = "dropdown__input dropdown__input--from" type="text" maxlength="20">
     <svg class = "svg-search"><use xlink:href="/sprite.svg#icon-search"></svg> 
   </div>
     <ul class="dropdown__list dropdown__list--from">
@@ -72,8 +72,11 @@
   </div>
 
 
-
-<input id ="amount-from" class="converter__input converter__input--from" type="text">
+  
+  <div class="converter__input-wrapper">
+    <label for="amount-from" class = "converter__input-label">Mam</label>
+<input id ="amount-from" class="converter__input converter__input--from" type="text" maxlength="12">
+  </div>
 </div>
 
 
@@ -86,7 +89,7 @@
   
   <div class="selectbox__dropdown selectbox__dropdown--to">
     <div class="dropdown__input-wrapper">
-    <input placeholder="enter the currency" class = "dropdown__input" type="text">
+    <input placeholder="podaj walutę" class = "dropdown__input dropdown__input--to" type="text"  maxlength="20" >
     <svg class = "svg-search"><use xlink:href="/sprite.svg#icon-search"></svg> 
   </div>
 
@@ -96,13 +99,16 @@
     </ul>
   </div>
   
+  <div class="converter__input-wrapper">
+    <label for="amount-to" class = "converter__input-label converter__input-label--disabled">Równe</label>
+  <input id ="amount-to" class="converter__input converter__input--to" type="text"  disabled>
   
-  <input id ="amount-to" class="converter__input converter__input--to" type="text">
+</div>
 </div>
 
 
 
-<div class="converter__swap-wrap">
+<div class="converter__swap-wrap" title="zamień">
   <button class = "convert__button button-round ">
     <svg class = "svg-swap"><use xlink:href="/sprite.svg#icon-swap_vert"></svg> 
 
@@ -113,7 +119,11 @@
 
 
 </div>   
-
+<div class="converter__button-wrap">
+  <button class=" button converter__button button--calc">
+   Przelicz
+  </button>
+</div>
 
               
 

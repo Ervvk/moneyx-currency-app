@@ -30,7 +30,7 @@
 }
 
 
-.button-round{
+.button--swap{
 
     
   display: block;
@@ -55,6 +55,6 @@
 
 }
 
-.button-round:hover .svg-swap{
+.button--swap:hover .svg-swap{
 fill:var(--color-component-light);
 }

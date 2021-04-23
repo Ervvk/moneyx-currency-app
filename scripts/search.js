@@ -1,4 +1,6 @@
 import {currencyData} from "./shared.js"
+import {swapInputs, displayResult} from "./converter.js"
+
 
 const dropdownFrom = document.querySelector(".selectbox__dropdown--from");
 const dropdownTo = document.querySelector(".selectbox__dropdown--to");
@@ -8,13 +10,9 @@ const dropdownListFrom = document.querySelector(".dropdown__list--from");
 const dropdownListTo = document.querySelector(".dropdown__list--to");
 const dropdownInputFrom = document.querySelector(".dropdown__input--from");
 const dropdownInputTo = document.querySelector(".dropdown__input--to");
-
+const inputFrom = document.querySelector(".converter__input--from");
 //const currencyData = JSON.parse(localStorage.getItem("todayRatesData"));
 console.log(currencyData);
-
-
-
-
 
 
 const searchBoxSetting = function () {
@@ -31,17 +29,32 @@ const searchBoxSetting = function () {
 
 const selectCurrencyDOMInteraction = function () {
 
+const preventSameCurrencies = function(targetTitle, secondTitle){
+  console.log(targetTitle, secondTitle);
+if(targetTitle === secondTitle) swapInputs();
+}
+
+
   const selectCurrencyActions = function(targetElement, activeDropdown, activeSelect){
-    if (targetElement.className === "dropdown__el") {
+    //console.log(targetElement);
+
+    if (targetElement.classList[0] === "dropdown__el") {
       //fill selectbox text content with selected currency code
-      activeSelect.firstElementChild.textContent = targetElement.title;
+      
+
+      const targetTitle = targetElement.title; 
 
       if(activeDropdown === dropdownFrom){
         moveDropdown(dropdownFrom, dropdownTo);
+        preventSameCurrencies(targetTitle,selectDropdownTo.firstElementChild.textContent)
       }
       if(activeDropdown === dropdownTo){
         moveDropdown(dropdownTo, dropdownFrom);
+        preventSameCurrencies(targetTitle,selectDropdownFrom.firstElementChild.textContent)
       }
+      activeSelect.firstElementChild.textContent = targetTitle;
+      if(inputFrom.value != "")
+      displayResult();
     }
   }
 
@@ -140,6 +153,7 @@ const fillDropdownContent = function (ratesData, dropdownList) {
 const createDropdownEl = function (currency, code) {
   const newEl = document.createElement("li");
   newEl.classList.add("dropdown__el");
+  newEl.classList.add("prevent-closing");
   newEl.title = code;
 
   newEl.innerHTML = `<div class="dropdown__el__flag">
@@ -168,5 +182,19 @@ const filterCurrencies = function (searchedInput) {
 
   return filteredData;
 };
+
+document.addEventListener('click', function(e){
+  const targetElement = e.target;
+ 
+  if(!targetElement.classList.contains('prevent-closing')){
+    console.log("X");
+if(dropdownFrom.classList.contains('selectbox__dropdown--show'))
+{moveDropdown(dropdownFrom, dropdownTo);}
+if(dropdownTo.classList.contains('selectbox__dropdown--show'))
+{moveDropdown(dropdownTo, dropdownFrom);}
+
+  }
+});
+
 
 export default searchBoxSetting;

@@ -106,7 +106,7 @@ svg {
     cursor: pointer;
     background-color: var(--color-component-light); }
 
-.button-round {
+.button--swap {
   display: block;
   border: none;
   background-color: var(--color-layout-primary);
@@ -116,14 +116,14 @@ svg {
   border-radius: 50%;
   height: 4.5rem;
   width: 4.5rem; }
-  .button-round:hover {
+  .button--swap:hover {
     cursor: pointer;
     color: var(--color-font-strong); }
-  .button-round:focus {
+  .button--swap:focus {
     outline: none;
     border: 0.5px solid var(--color-component-light); }
 
-.button-round:hover .svg-swap {
+.button--swap:hover .svg-swap {
   fill: var(--color-component-light); }
 
 .currency-el {
@@ -239,19 +239,12 @@ svg {
   box-shadow: 0 9px 16px -4px rgba(0, 0, 0, 0.4);
   position: absolute;
   z-index: 20;
-  width: 50vw;
-  /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/
+  width: 25rem;
   height: 30rem;
   background-color: var(--color-layout-primary);
-  transition: .2s ease;
+  transition: 0.2s ease;
   top: 4.6em;
   left: 0; }
-  @media only screen and (min-width: 800px) {
-    .selectbox__dropdown {
-      width: 25rem; } }
 
 .dropdown__input-wrapper {
   overflow-x: hidden;
@@ -389,7 +382,14 @@ svg {
 
 .converter__button-wrap {
   position: relative;
-  width: 35rem; }
+  width: 90vw;
+  /*
+    @if $screenwidth ==  {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }*/ }
+  @media only screen and (min-width: 380px) {
+    .converter__button-wrap {
+      width: 35rem; } }
 
 .button--calc {
   position: absolute;
@@ -450,11 +450,18 @@ svg {
     text-decoration: none;
     width: 100vw;
     cursor: pointer;
-    font-size: 3em;
+    font-size: 2.25rem;
     color: var(--color-font-light);
     padding-left: var(--layout-margin-small);
     padding-top: calc(var(--layout-margin-mini)/2);
-    padding-bottom: calc(var(--layout-margin-mini)/2); }
+    padding-bottom: calc(var(--layout-margin-mini)/2);
+    /*
+    @if $screenwidth ==  {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }*/ }
+    @media only screen and (min-width: 800px) {
+      .nav__list__el {
+        font-size: 3rem; } }
     .nav__list__el:hover {
       color: var(--color-font-primary);
       background-color: #fafafa; }
@@ -466,26 +473,6 @@ svg {
   justify-content: center;
   align-items: center; }
 
-/*
-.button__icon-wrap{
-    height: 4rem;
-   width:4rem;
-
-    background-color: var(--color-component-dark);
-    border-radius: 50%;
-   @include flexCentering(row);
-}
-
-
-/
-.button__icon{
-width:2rem;
-height:3rem;
-fill: var(--color-layout-secondary);
-
-}
-
-*/
 .top-rates {
   margin-top: var(--layout-margin-medium);
   height: 45rem;

@@ -36,8 +36,8 @@
             <div class="nav__wrapper">
               <ul class="nav__list">
                 <a href="/index.html" class="nav__list__el">Home</a>
-                <a href ="/pages/rates.html" class="nav__list__el">Exchange rates</a>
-                <a href ="/pages/converter.html" class="nav__list__el">Currency converter</a>
+                <a href ="/pages/rates.html" class="nav__list__el">Kursy walut</a>
+                <a href ="/pages/converter.html" class="nav__list__el">Kalkulator walutowy</a>
               </ul>
             </div>
           </nav>
@@ -50,16 +50,17 @@
             <div class="converter__rows-wrap">
 <div class="converter__row converter__row--from">
 
-  <div  tabindex="1" class="converter__selectbox converter__selectbox--from">
+  <div  tabindex="1" class="converter__selectbox converter__selectbox--from prevent-closing">
     <div class="selectbox__currency selectbox__currency--from">EUR</div>
     <svg class = "svg-dropdown"><use xlink:href="/sprite.svg#icon-ctrl"></svg> 
 
       
 
   </div>
-  <div class="selectbox__dropdown selectbox__dropdown--from">
-    <div class="dropdown__input-wrapper">
-    <input placeholder="podaj walutę" class = "dropdown__input dropdown__input--from" type="text" maxlength="20">
+  <div class="selectbox__dropdown selectbox__dropdown--from prevent-closing">
+    <div class="dropdown__input-wrapper prevent-closing">
+    <input placeholder="podaj walutę" class = "dropdown__input dropdown__input--from prevent-closing
+    " type="text" maxlength="20">
     <svg class = "svg-search"><use xlink:href="/sprite.svg#icon-search"></svg> 
   </div>
     <ul class="dropdown__list dropdown__list--from">
@@ -83,14 +84,15 @@
 
 
 <div class="converter__row converter__row--to">
-  <div tabindex="1" class="converter__selectbox converter__selectbox--to">
+  <div tabindex="1" class="converter__selectbox converter__selectbox--to prevent-closing">
     <div class="selectbox__currency selectbox__currency--to">USD</div>
     <svg class = "svg-dropdown"><use xlink:href="/sprite.svg#icon-ctrl"></svg> 
   </div>
   
-  <div class="selectbox__dropdown selectbox__dropdown--to">
-    <div class="dropdown__input-wrapper">
-    <input placeholder="podaj walutę" class = "dropdown__input dropdown__input--to" type="text"  maxlength="20" >
+  <div class="selectbox__dropdown selectbox__dropdown--to prevent-closing">
+    <div class="dropdown__input-wrapper prevent-closing">
+    <input placeholder="podaj walutę" class = "dropdown__input dropdown__input--to prevent-closing
+    " type="text"  maxlength="20" >
     <svg class = "svg-search"><use xlink:href="/sprite.svg#icon-search"></svg> 
   </div>
 
@@ -101,7 +103,7 @@
   </div>
   
   <div class="converter__input-wrapper">
-    <label for="amount-to" class = "converter__input-label converter__input-label--disabled">Równe</label>
+    <label for="amount-to" class = "converter__input-label converter__input-label--disabled">Otrzymam</label>
   <input id ="amount-to" class="converter__input converter__input--to" type="text"  disabled>
   
 </div>
@@ -110,7 +112,7 @@
 
 
 <div class="converter__swap-wrap" title="zamień">
-  <button class = "convert__button button-round ">
+  <button class = "convert__button button--swap ">
     <svg class = "svg-swap"><use xlink:href="/sprite.svg#icon-swap_vert"></svg> 
 
   </button>

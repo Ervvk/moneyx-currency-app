@@ -140,10 +140,10 @@ const fillDropdownContent = function (ratesData, dropdownList) {
   const frag = document.createDocumentFragment();
 
   ratesData.forEach((row) => {
-    if (row.code !== "XDR") {
+
       const newElement = createDropdownEl(row.currency, row.code);
       frag.appendChild(newElement);
-    }
+    
   });
 
   dropdownList.innerHTML = "";

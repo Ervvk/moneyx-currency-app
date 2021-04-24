@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500;700&display=swap"
       rel="stylesheet"
     />
-   
+    <script defer src='../bignumber.js'></script>
     <script defer type="module" src="/scripts/main.js"></script>
 </head>
 <body>
@@ -42,11 +42,22 @@
           </nav>
         </div>
         <main class="main-part">
+          <div class="currency-list__names-wrapper">
+         
+            <span class = "rate-space">...............</span>
+            <span class="rate-name rate-name--left">Waluta</span>
+            <span class = "rate-space">................</span>
+            <span class="rate-name rate-name--right" >Zmiana kursu 24h</span>
+                      </div>
+
+          
+          <div class="currency__rates-wrapper">
+       
           <div class="currency-list">
             <div class="currency-list__el currency-el">
               <div class="currency-el__part currency-el__part--flag">
                 <div class="currency-flag currency-flag-lg currency-flag-usd"></div>
-                <span class="top-rates__name top-rates__name--left">Currency</span>
+            
               </div>
               <span class="currency-el__part currency-el__part--code">1 USD - PLN  </span>
               <span class="currency-el__part currency-el__part--value"
@@ -54,9 +65,7 @@
               >
               <span class="currency-el__part currency-el__part--change change--up"
                 >+0.57%
-                <span class="top-rates__name top-rates__name--right"
-                  >Rate change 24h</span
-                >
+              
               </span>
             </div>
     
@@ -140,9 +149,9 @@
             </div>
 
 
-            
           </div>
-    
+        </div>
+          <div class="top-rates__update-wrapper"> <strong>Dane: NBP &nbsp</strong>  Ostatnia aktualizacja danych: <span class="top-rates__last-update last-update"></span></div>
    
         
         </main>

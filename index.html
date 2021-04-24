@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500;700&display=swap"
       rel="stylesheet"
     />
-   
+    <script defer src='../bignumber.js'></script>
     <script defer  type="module" src="/scripts/main.js"></script>
   </head>
 
@@ -49,11 +49,11 @@
             <span class="top-rates__name top-rates__name--left">Waluta</span>
           </div>
           <span class="currency-el__part currency-el__part--code">1 USD - PLN </span>
-          <span class="currency-el__part currency-el__part--value"
+          <span class="currency-el__part currency-el__part--value top-rates__part--value"
             >1.312442</span
           >
           <span class="currency-el__part currency-el__part--change change--up"
-            >+0.57%
+            > <span class ="top-rates__part--change">+0.57%</span>
             <span class="top-rates__name top-rates__name--right"
               >Zmiana kursu 24h</span
             >
@@ -65,10 +65,10 @@
             <div class="currency-flag currency-flag-lg currency-flag-gbp"></div>
           </div>
           <span class="currency-el__part currency-el__part--code">1 GBP - PLN</span>
-          <span class="currency-el__part currency-el__part--value"
+          <span class="currency-el__part currency-el__part--value top-rates__part--value"
             >1.312442</span
           >
-          <span class="currency-el__part currency-el__part--change change--up"
+          <span class="currency-el__part currency-el__part--change top-rates__part--change change--up"
             >+0.57%</span
           >
         </div>
@@ -78,10 +78,10 @@
             <div class="currency-flag currency-flag-lg currency-flag-eur"></div>
           </div>
           <span class="currency-el__part currency-el__part--code">1 EUR - PLN</span>
-          <span class="currency-el__part currency-el__part--value"
+          <span class="currency-el__part currency-el__part--value top-rates__part--value"
             >1.312442</span
           >
-          <span class="currency-el__part currency-el__part--change change--down"
+          <span class="currency-el__part currency-el__part--change top-rates__part--change change--down"
             >+0.57%</span
           >
         </div>
@@ -91,10 +91,10 @@
             <div class="currency-flag currency-flag-lg currency-flag-chf"></div>
           </div>
           <span class="currency-el__part currency-el__part--code">1 CHF - PLN</span>
-          <span class="currency-el__part currency-el__part--value"
+          <span class="currency-el__part currency-el__part--value top-rates__part--value"
             >1.312442</span
           >
-          <span class="currency-el__part currency-el__part--change change--up"
+          <span class="currency-el__part currency-el__part--change  top-rates__part--change change--up"
             >+0.57%</span
           >
         </div>
@@ -104,13 +104,16 @@
             <div class="currency-flag currency-flag-lg currency-flag-rub"></div>
           </div>
           <span class="currency-el__part currency-el__part--code">1 RUB - PLN</span>
-          <span class="currency-el__part currency-el__part--value"
+          <span class="currency-el__part currency-el__part--value top-rates__part--value"
             >1.312442</span
           >
-          <span class="currency-el__part currency-el__part--change change--down"
+          <span class="currency-el__part currency-el__part--change top-rates__part--change change--down"
             >+0.57%</span
           >
         </div>
+        <div class="top-rates__update-wrapper">  <strong>Dane: NBP &nbsp</strong> Ostatnia aktualizacja danych: <span class="top-rates__last-update last-update"></span></div>
+
+
       </div>
 
       <div class="btns-wrapper">

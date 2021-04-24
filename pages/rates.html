@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/currency-flags.css" />
+    <link rel="stylesheet" href="../externals/currency-flags.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500;700&display=swap"
       rel="stylesheet"
     />
-    <script defer src='../bignumber.js'></script>
-    <script defer type="module" src="/scripts/main.js"></script>
+    <script defer src='../externals/bignumber.js'></script>
+    <script type="module" src="/scripts/main.js"></script>
 </head>
 <body>
-    <body>
         <header class="header">
           <nav class="main-nav">
             <div class="main-nav__wrapper">
@@ -33,11 +32,11 @@
         <div class="sidebar">
           <nav class="sidebar__nav">
             <div class="nav__wrapper">
-              <ul class="nav__list">
+              <div class="nav__list">
                 <a href="/index.html" class="nav__list__el">Home</a>
                 <a href ="/pages/rates.html" class="nav__list__el">Kursy walut</a>
                 <a href ="/pages/converter.html" class="nav__list__el">Kalkulator walutowy</a>
-              </ul>
+              </div>
             </div>
           </nav>
         </div>
@@ -150,8 +149,11 @@
 
 
           </div>
+          
         </div>
-          <div class="top-rates__update-wrapper"> <strong>Dane: NBP &nbsp</strong>  Ostatnia aktualizacja danych: <span class="top-rates__last-update last-update"></span></div>
+        <div class="currency-list__scroll-info">Scrolluj po liście </div>
+   
+          <div class="top-rates__update-wrapper"> <strong>Dane: NBP &nbsp;</strong>  Ostatnia aktualizacja danych: <span class="top-rates__last-update last-update"></span></div>
    
         
         </main>

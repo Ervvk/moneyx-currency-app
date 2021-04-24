@@ -126,6 +126,27 @@ svg {
 .button--swap:hover .svg-swap {
   fill: var(--color-component-light); }
 
+.btns-wrapper {
+  margin-top: var(--layout-margin-small);
+  width: 100vw;
+  max-width: 80rem;
+  transform: translateX(2.5rem);
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  /*
+    @if $screenwidth ==  {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }*/ }
+  @media only screen and (min-width: 800px) {
+    .btns-wrapper {
+      margin-top: 0;
+      flex-direction: row;
+      justify-content: space-evenly; } }
+
 .currency-el {
   position: relative;
   z-index: -1;
@@ -151,8 +172,31 @@ svg {
 .change--down {
   color: var(--color-change-decrease); }
 
+.top-rates {
+  margin-top: 4rem;
+  height: 45rem;
+  width: 100vw;
+  max-width: 80rem;
+  position: relative;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; }
+
+.currency-list__names-wrapper {
+  width: 80vw;
+  max-width: 80rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  height: 2rem;
+  transform: translateY(3.75rem) translateX(3rem); }
+  @media (min-width: 400px) {
+    .currency-list__names-wrapper {
+      width: 90vw; } }
+
 .currency-list {
-  height: 60rem;
   width: 100vw;
   max-width: 80rem;
   position: relative;
@@ -189,18 +233,6 @@ svg {
   display: none;
   /* Safari and Chrome */ }
 
-.currency-list__names-wrapper {
-  width: 80vw;
-  max-width: 80rem;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  height: 2rem;
-  transform: translateY(3.75rem) translateX(3rem); }
-  @media (min-width: 400px) {
-    .currency-list__names-wrapper {
-      width: 90vw; } }
-
 .rate-space {
   width: 6rem;
   color: transparent;
@@ -209,6 +241,10 @@ svg {
 .rate-name {
   width: 10rem;
   color: var(--color-font-light); }
+
+.currency-list__scroll-info {
+  transform: translateY(-1rem);
+  color: var(--color-component-dark); }
 
 .hamburger-btn {
   cursor: pointer;
@@ -510,45 +546,3 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center; }
-
-.top-rates {
-  margin-top: var(--layout-margin-medium);
-  height: 45rem;
-  width: 100vw;
-  max-width: 80rem;
-  position: relative;
-  z-index: -1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly; }
-  .top-rates__name {
-    width: 12rem;
-    position: absolute;
-    top: calc(-1.65 * var(--layout-margin-small));
-    color: var(--color-font-light); }
-    .top-rates__name--left {
-      left: 0.5em; }
-    .top-rates__name--right {
-      right: 0.5em; }
-
-.btns-wrapper {
-  margin-top: var(--layout-margin-small);
-  width: 100vw;
-  max-width: 80rem;
-  transform: translateX(2.5rem);
-  height: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/ }
-  @media only screen and (min-width: 800px) {
-    .btns-wrapper {
-      margin-top: 0;
-      flex-direction: row;
-      justify-content: space-evenly; } }

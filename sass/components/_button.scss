@@ -1,5 +1,4 @@
-.button{
-
+.button {
   display: block;
   border: none;
   font-size: 1.45rem;
@@ -7,54 +6,56 @@
   text-decoration: none;
   color: var(--color-layout-primary);
   background-color: var(--color-component-dark);
-  
   height: 3.5rem;
- 
   border-radius: 0.3rem;
   @include flexCentering(row);
-
-  &--main{
-    margin-right: var(--layout-margin-small);
-    width: 30rem;
-  }
-&--calc{
-  width:15rem;
-}
-
 
   &:hover {
     cursor: pointer;
     background-color: var(--color-component-light);
   }
-
+  &--main {
+    margin-right: var(--layout-margin-small);
+    width: 30rem;
+  }
+  &--calc {
+    width: 15rem;
+  }
 }
 
-
-.button--swap{
-
-    
+.button--swap {
   display: block;
   border: none;
   background-color: var(--color-layout-primary);
-  @include flexCentering(row);
   border-radius: 50%;
-  height:4.5rem;
-  width:4.5rem;
-
-  
+  height: 4.5rem;
+  width: 4.5rem;
+  @include flexCentering(row);
   &:hover {
     cursor: pointer;
     color: var(--color-font-strong);
-
-    //background-color: var(--color-component-light);
   }
-  &:focus{
-    outline:none;
-    border:.5px solid var(--color-component-light);
+  &:focus {
+    outline: none;
+    border: 0.5px solid var(--color-component-light);
   }
-
 }
 
-.button--swap:hover .svg-swap{
-fill:var(--color-component-light);
+.button--swap:hover .svg-swap {
+  fill: var(--color-component-light);
+}
+
+.btns-wrapper {
+  margin-top: var(--layout-margin-small);
+  width: 100vw;
+  max-width: 80rem;
+  transform: translateX(2.5rem);
+  height: 10rem;
+  @include flexCentering(column);
+  justify-content: space-between;
+  @include setBreakpoint(tab) {
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }

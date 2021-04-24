@@ -7,17 +7,13 @@
 }
 
 html {
-    // This defines what 1rem is
-    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
-
+    font-size: 62.5%; //1 rem = 10px; 
     @include setBreakpoint(tab) {
         font-size: 75%;
       }
       @include setBreakpoint(desktop) {
         font-size: 85%;
       }
-    
- 
 }
 
 body {
@@ -26,9 +22,6 @@ body {
     overflow-x: hidden;
     background-color: var(--color-layout-primary);
 
-
-
-   
 }
 
 .main-part{

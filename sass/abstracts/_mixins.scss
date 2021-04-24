@@ -1,8 +1,4 @@
 @mixin setBreakpoint($screenwidth) {
-    /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/
     @if  $screenwidth == bigmobile {
         @media only screen and (min-width:380px) { @content };    
     }
@@ -12,8 +8,6 @@
     @if $screenwidth == desktop {
         @media only screen and (min-width:1400px) { @content };    
     }
-       
-
 }
 
 @mixin flexCentering($direction){
@@ -30,15 +24,11 @@
     @if $state == hidden {
     opacity: .0;
     visibility: hidden;
-
     }
-
     @if $state == visible {
     opacity: 1.0;
-    visibility: visible;
-        
+    visibility: visible; 
     }
-    
 }
 
 @mixin dotsOverflow{

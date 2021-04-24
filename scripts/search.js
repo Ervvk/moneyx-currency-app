@@ -1,11 +1,11 @@
-import {currencyData} from "./shared.js"
-import {swapInputs, displayResult} from "./converter.js"
-
+// logic of custom searchbox
+import { currencyData } from "./shared.js";
+import { swapInputs, displayResult } from "./converter.js";
 
 const dropdownFrom = document.querySelector(".selectbox__dropdown--from");
 const dropdownTo = document.querySelector(".selectbox__dropdown--to");
- const selectDropdownFrom = document.querySelector(".converter__selectbox--from");
- const selectDropdownTo = document.querySelector(".converter__selectbox--to");
+const selectDropdownFrom = document.querySelector(".converter__selectbox--from");
+const selectDropdownTo = document.querySelector(".converter__selectbox--to");
 const dropdownListFrom = document.querySelector(".dropdown__list--from");
 const dropdownListTo = document.querySelector(".dropdown__list--to");
 const dropdownInputFrom = document.querySelector(".dropdown__input--from");
@@ -14,11 +14,10 @@ const inputFrom = document.querySelector(".converter__input--from");
 //const currencyData = JSON.parse(localStorage.getItem("todayRatesData"));
 console.log(currencyData);
 
-
 const searchBoxSetting = function () {
-  //get data to fill dropdown
 
   console.log(currencyData);
+    //fill in both dropdowns with data
   fillDropdownContent(currencyData, dropdownListFrom);
   fillDropdownContent(currencyData, dropdownListTo);
   openDropdownDOMInteraction();
@@ -26,46 +25,41 @@ const searchBoxSetting = function () {
   selectCurrencyDOMInteraction();
 };
 
-
+//the logic of selecting a currency from dropdown
 const selectCurrencyDOMInteraction = function () {
+  // when user select currency that is already picked - swap 
+  const preventSameCurrencies = function (targetTitle, secondTitle) {
+    if (targetTitle === secondTitle) swapInputs();
+  };
 
-const preventSameCurrencies = function(targetTitle, secondTitle){
-  console.log(targetTitle, secondTitle);
-if(targetTitle === secondTitle) swapInputs();
-}
-
-
-  const selectCurrencyActions = function(targetElement, activeDropdown, activeSelect){
-    //console.log(targetElement);
-
+  const selectCurrencyActions = function (targetElement, activeDropdown,activeSelect) {
+ 
     if (targetElement.classList[0] === "dropdown__el") {
       //fill selectbox text content with selected currency code
-      
 
-      const targetTitle = targetElement.title; 
+      const targetTitle = targetElement.title;
 
-      if(activeDropdown === dropdownFrom){
+      if (activeDropdown === dropdownFrom) {
         moveDropdown(dropdownFrom, dropdownTo);
-        preventSameCurrencies(targetTitle,selectDropdownTo.firstElementChild.textContent)
+        preventSameCurrencies(targetTitle,selectDropdownTo.firstElementChild.textContent);
       }
-      if(activeDropdown === dropdownTo){
+      if (activeDropdown === dropdownTo) {
         moveDropdown(dropdownTo, dropdownFrom);
-        preventSameCurrencies(targetTitle,selectDropdownFrom.firstElementChild.textContent)
+        preventSameCurrencies(targetTitle,selectDropdownFrom.firstElementChild.textContent);
       }
       activeSelect.firstElementChild.textContent = targetTitle;
-      if(inputFrom.value != "")
-      displayResult();
+      if (inputFrom.value != "") displayResult();
     }
-  }
+  };
 
   dropdownListFrom.addEventListener("click", function (e) {
     const targetElement = e.target;
-    selectCurrencyActions(targetElement,dropdownFrom, selectDropdownFrom); 
+    selectCurrencyActions(targetElement, dropdownFrom, selectDropdownFrom);
   });
 
   dropdownListTo.addEventListener("click", function (e) {
     const targetElement = e.target;
-    selectCurrencyActions(targetElement,dropdownTo, selectDropdownTo); 
+    selectCurrencyActions(targetElement, dropdownTo, selectDropdownTo);
   });
 };
 
@@ -77,32 +71,31 @@ const searchInputsDOMInteraction = function () {
       fillDropdownContent(currencyData, activeDropdown);
       return false;
     }
-
+    //if input is not empty - search for matching currencies
     return searchInputValidation(searchedValue);
   };
-
-
+// run a search on keyup
   dropdownInputFrom.addEventListener("keyup", function (e) {
     const inputValue = e.target.value;
     const isInputValid = startSearchValidation(inputValue, dropdownListFrom);
-
+// fill dropdown with search result
     if (isInputValid) {
       const filteredArray = filterCurrencies(inputValue);
       fillDropdownContent(filteredArray, dropdownListFrom);
     }
   });
-
+// run a search on keyup
   dropdownInputTo.addEventListener("keyup", function (e) {
     const inputValue = e.target.value;
     const isInputValid = startSearchValidation(inputValue, dropdownListTo);
-
+// fill dropdown with search result
     if (isInputValid) {
       const filteredArray = filterCurrencies(inputValue);
       fillDropdownContent(filteredArray, dropdownListTo);
     }
   });
 };
-
+// close&open dropdown logic
 const moveDropdown = function (dropdownSelector, checkSelector) {
   const dropdownOpenClass = "selectbox__dropdown--show";
 
@@ -119,8 +112,9 @@ const moveDropdown = function (dropdownSelector, checkSelector) {
 
   dropdownSelector.classList.toggle(dropdownOpenClass);
 };
-
+//dropdown opening simultaneous actions logic
 const openDropdownDOMInteraction = function () {
+  //clear dropdown input
   const clearDropdownInput = function (input) {
     if (input.value.length > 0) input.value = "";
   };
@@ -135,21 +129,20 @@ const openDropdownDOMInteraction = function () {
     clearDropdownInput(dropdownInputTo);
   });
 };
-
+// build document fragment with all dropodown elements, then put it into DOM
 const fillDropdownContent = function (ratesData, dropdownList) {
   const frag = document.createDocumentFragment();
 
   ratesData.forEach((row) => {
-
-      const newElement = createDropdownEl(row.currency, row.code);
-      frag.appendChild(newElement);
-    
+    const newElement = createDropdownEl(row.currency, row.code);
+    frag.appendChild(newElement);
   });
 
   dropdownList.innerHTML = "";
   dropdownList.appendChild(frag);
 };
 
+// create new dropdown element 
 const createDropdownEl = function (currency, code) {
   const newEl = document.createElement("li");
   newEl.classList.add("dropdown__el");
@@ -173,28 +166,26 @@ const searchInputValidation = function (selectedInput) {
   return true;
 };
 
+// search for information about a currency by code or name
 const filterCurrencies = function (searchedInput) {
   const filteredData = currencyData.filter(
     (cur) =>
       cur.code.toLowerCase().includes(searchedInput.toLowerCase()) ||
       cur.currency.toLowerCase().includes(searchedInput.toLowerCase())
   );
-
   return filteredData;
 };
 
-document.addEventListener('click', function(e){
+document.addEventListener("click", function (e) {
   const targetElement = e.target;
- 
-  if(!targetElement.classList.contains('prevent-closing')){
-    console.log("X");
-if(dropdownFrom.classList.contains('selectbox__dropdown--show'))
-{moveDropdown(dropdownFrom, dropdownTo);}
-if(dropdownTo.classList.contains('selectbox__dropdown--show'))
-{moveDropdown(dropdownTo, dropdownFrom);}
-
+  if (!targetElement.classList.contains("prevent-closing")) {
+    if (dropdownFrom.classList.contains("selectbox__dropdown--show")) {
+      moveDropdown(dropdownFrom, dropdownTo);
+    }
+    if (dropdownTo.classList.contains("selectbox__dropdown--show")) {
+      moveDropdown(dropdownTo, dropdownFrom);
+    }
   }
 });
-
 
 export default searchBoxSetting;

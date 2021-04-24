@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MoneyX - NBP currency management</title>
-    <link rel="stylesheet" href="currency-flags.css" />
+    <link rel="stylesheet" href="../externals/currency-flags.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;500;700&display=swap"
       rel="stylesheet"
     />
-    <script defer src='../bignumber.js'></script>
-    <script defer  type="module" src="/scripts/main.js"></script>
+    <script defer src='../externals/bignumber.js'></script>
+    <script type="module" src="/scripts/main.js"></script>
   </head>
 
   <body>
@@ -33,20 +33,30 @@
     <div class="sidebar">
       <nav class="sidebar__nav">
         <div class="nav__wrapper">
-          <ul class="nav__list">
+          <div class="nav__list">
             <a href="/index.html" class="nav__list__el">Home</a>
             <a href ="/pages/rates.html" class="nav__list__el">Kursy walut</a>
             <a href ="/pages/converter.html" class="nav__list__el">Kalkulator walutowy</a>
-          </ul>
+          </div>
         </div>
       </nav>
     </div>
     <main class="main-part">
+
+      <div class="currency-list__names-wrapper">
+         
+        <span class = "rate-space">...............</span>
+        <span class="rate-name rate-name--left">Waluta</span>
+        <span class = "rate-space">................</span>
+        <span class="rate-name rate-name--right" >Zmiana kursu 24h</span>
+                  </div>
+
+
       <div class="top-rates">
         <div class="top-rates__el currency-el">
           <div class="currency-el__part currency-el__part--flag">
             <div class="currency-flag currency-flag-lg currency-flag-usd"></div>
-            <span class="top-rates__name top-rates__name--left">Waluta</span>
+        
           </div>
           <span class="currency-el__part currency-el__part--code">1 USD - PLN </span>
           <span class="currency-el__part currency-el__part--value top-rates__part--value"
@@ -54,9 +64,7 @@
           >
           <span class="currency-el__part currency-el__part--change change--up"
             > <span class ="top-rates__part--change">+0.57%</span>
-            <span class="top-rates__name top-rates__name--right"
-              >Zmiana kursu 24h</span
-            >
+        
           </span>
         </div>
 
@@ -111,7 +119,7 @@
             >+0.57%</span
           >
         </div>
-        <div class="top-rates__update-wrapper">  <strong>Dane: NBP &nbsp</strong> Ostatnia aktualizacja danych: <span class="top-rates__last-update last-update"></span></div>
+        <div class="top-rates__update-wrapper">  <strong>Dane: NBP &nbsp;</strong> Ostatnia aktualizacja danych: <span class="top-rates__last-update last-update"></span></div>
 
 
       </div>
@@ -121,7 +129,7 @@
           Zobacz więcej walut
         </a>
 
-        <a href ="/pages/converter.html"class="button button--main button--converter">Kalkulator walutowy</a>
+        <a href ="/pages/converter.html" class="button button--main button--converter">Kalkulator walutowy</a>
       </div>
     </main>
     <footer class="footer">MoneyX 2021 by Eryk Baranowski</footer>

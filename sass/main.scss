@@ -1,20 +1,13 @@
-@import "abstracts/functions";
+
 @import "abstracts/mixins";
 @import "abstracts/variables";
-@import "base/animations";
 @import "base/base";
 @import "base/typography";
-@import "base/utilities";
 @import "components/button";
-@import "components/currency-card";
 @import "components/currency-el";
 @import "components/currency-list";
 @import "components/hamburger";
 @import "components/searchbox";
 @import "components/converter";
 @import "layout/navigation";
-@import "layout/top-rates";
-@import "pages/home";
-@import "pages/converter";
-@import "pages/rates";
 

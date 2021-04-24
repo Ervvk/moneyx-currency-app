@@ -4,7 +4,7 @@ export const currencyData = JSON.parse(localStorage.getItem("todayRatesData"));
 export const getCurrencyData = async function () {
   try {
     let res = await fetch(
-      `http://api.nbp.pl/api/exchangerates/tables/a/last/2`
+      `https://api.nbp.pl/api/exchangerates/tables/a/last/2`
     );
     const data = await res.json();
     buildStorage(data);

@@ -2,22 +2,20 @@
   width: 100vw;
   background-color: var(--color-layout-secondary);
   height: calc(var(--height-component-medium)+7rem);
- 
 }
 
 .main-nav {
-
   z-index: 5;
   background-color: var(--color-layout-secondary);
   height: var(--height-component-medium);
   width: 100vw;
   display: flex;
   @include flexCentering(row);
-  &__wrapper{
-  width:83%;
+  &__wrapper {
+    width: 83%;
 
-    @include setBreakpoint(desktop){
-      width:70rem;
+    @include setBreakpoint(desktop) {
+      width: 70rem;
     }
     display: flex;
     justify-content: space-between;
@@ -26,7 +24,6 @@
 }
 
 .sidebar {
-
   background-color: var(--color-layout-primary);
   position: fixed;
   z-index: 7;
@@ -35,52 +32,47 @@
   width: 100%;
   height: 100vh;
   transform: translateX(300vw);
-  transition: .4s ease-out;
+  transition: 0.4s ease-out;
+  border: none;
 
- border:none;
-
-  &--active { 
-
+  &--active {
     transform: translateX(0);
   }
 }
 
 .sidebar__nav {
-  margin-top: calc(2*var(--layout-margin-big));
+  margin-top: calc(2 * var(--layout-margin-big));
   @include flexCentering(row);
 }
 
 .nav__list {
   list-style: none;
-  width:100%;
-
+  width: 100%;
 
   &__el {
     display: block;
     text-decoration: none;
-
     width: 100vw;
-      cursor:pointer;
-      font-size: 2.25rem;
-      color: var(--color-font-light);
-      padding-left: var(--layout-margin-small);
-      padding-top:  calc(var(--layout-margin-mini)/2);
-      padding-bottom:  calc(var(--layout-margin-mini)/2);
-      
-      @include setBreakpoint(tab){
-        font-size: 3rem;
-      }
+    cursor: pointer;
+    font-size: 2.25rem;
+    color: var(--color-font-light);
+    padding-left: var(--layout-margin-small);
+    padding-top: calc(var(--layout-margin-mini) / 2);
+    padding-bottom: calc(var(--layout-margin-mini) / 2);
 
-      &:hover{
-        color: var(--color-font-primary);
-        background-color: lighten(whitesmoke, 2%);
-      }
+    @include setBreakpoint(tab) {
+      font-size: 3rem;
+    }
 
+    &:hover {
+      color: var(--color-font-primary);
+      background-color: lighten(whitesmoke, 2%);
+    }
   }
 }
 
-.footer{
-  margin-top:var(--layout-margin-small);
-  height:7.5rem;
+.footer {
+  margin-top: var(--layout-margin-small);
+  height: 7.5rem;
   @include flexCentering(row);
 }

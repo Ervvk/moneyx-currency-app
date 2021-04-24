@@ -6,7 +6,9 @@
   "dependencies": {
     "currency-flags": "^3.2.0",
     "mathjs": "^9.3.2",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.12"
+    
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
@@ -18,7 +20,8 @@
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "live-run": "live-server",
     "start": "npm-run-all --parallel live-run watch:sass ",
-    "prefix:css": "postcss --use autoprefixer -b \"last 10 version\" css/style.css -o css/style.prefix.css"
+    "compress:css": "node-sass css/style.prefix.css css/style.comp.css --output-style compressed ",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 version\" css/style.comp.css -o css/style.prefix.css"
   },
   "author": "ervk",
   "license": "ISC"

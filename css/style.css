@@ -12,8 +12,7 @@
   --layout-margin-medium:5em;
   --layout-margin-big:7em;
   --height-component-medium: 7rem;
-  --height-imput-medium: 4rem;
-  --bp-m: 800px; }
+  --height-imput-medium: 4rem; }
 
 *,
 *::after,
@@ -23,15 +22,7 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
-  /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/
-  /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/ }
+  font-size: 62.5%; }
   @media only screen and (min-width: 800px) {
     html {
       font-size: 75%; } }
@@ -56,7 +47,6 @@ body {
 body {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 300;
-  /*font-size: 16px;*/
   line-height: 1.7; }
 
 h1 {
@@ -97,25 +87,25 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .button:hover {
+    cursor: pointer;
+    background-color: var(--color-component-light); }
   .button--main {
     margin-right: var(--layout-margin-small);
     width: 30rem; }
   .button--calc {
     width: 15rem; }
-  .button:hover {
-    cursor: pointer;
-    background-color: var(--color-component-light); }
 
 .button--swap {
   display: block;
   border: none;
   background-color: var(--color-layout-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
   height: 4.5rem;
-  width: 4.5rem; }
+  width: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   .button--swap:hover {
     cursor: pointer;
     color: var(--color-font-strong); }
@@ -136,11 +126,7 @@ svg {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
-  /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/ }
+  justify-content: space-between; }
   @media only screen and (min-width: 800px) {
     .btns-wrapper {
       margin-top: 0;
@@ -156,7 +142,7 @@ svg {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-radius: .3em;
+  border-radius: 0.3em;
   border: 1px solid #e7e6e6; }
   .currency-el__part {
     width: 20%;
@@ -272,7 +258,8 @@ svg {
   transform: translateY(-2px);
   width: 70%; }
 
-.hamburger__line::after, .hamburger__line::before {
+.hamburger__line::after,
+.hamburger__line::before {
   content: "";
   position: absolute;
   display: inline-block;
@@ -384,10 +371,6 @@ svg {
   background-color: #fff;
   width: 100vw;
   height: 50rem;
-  /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -444,11 +427,7 @@ svg {
 .converter__swap-wrap {
   position: absolute;
   right: 22rem;
-  top: 20rem;
-  /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/ }
+  top: 20rem; }
   @media only screen and (min-width: 800px) {
     .converter__swap-wrap {
       right: -7rem;
@@ -456,11 +435,7 @@ svg {
 
 .converter__button-wrap {
   position: relative;
-  width: 90vw;
-  /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/ }
+  width: 90vw; }
   @media only screen and (min-width: 380px) {
     .converter__button-wrap {
       width: 35rem; } }
@@ -485,10 +460,6 @@ svg {
   align-items: center; }
   .main-nav__wrapper {
     width: 83%;
-    /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/
     display: flex;
     justify-content: space-between;
     align-items: center; }
@@ -505,13 +476,13 @@ svg {
   width: 100%;
   height: 100vh;
   transform: translateX(300vw);
-  transition: .4s ease-out;
+  transition: 0.4s ease-out;
   border: none; }
   .sidebar--active {
     transform: translateX(0); }
 
 .sidebar__nav {
-  margin-top: calc(2*var(--layout-margin-big));
+  margin-top: calc(2 * var(--layout-margin-big));
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -527,12 +498,8 @@ svg {
     font-size: 2.25rem;
     color: var(--color-font-light);
     padding-left: var(--layout-margin-small);
-    padding-top: calc(var(--layout-margin-mini)/2);
-    padding-bottom: calc(var(--layout-margin-mini)/2);
-    /*
-    @if $screenwidth ==  {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }*/ }
+    padding-top: calc(var(--layout-margin-mini) / 2);
+    padding-bottom: calc(var(--layout-margin-mini) / 2); }
     @media only screen and (min-width: 800px) {
       .nav__list__el {
         font-size: 3rem; } }

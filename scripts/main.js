@@ -29,15 +29,13 @@ const colorPercentages = function () {
 
 function init() {
   hamburgerScript();
+
   // load data from api once a day
   if(!wasDataUpdatedToday()){
     getCurrencyData().then(function(){
       displayTopRates();  
-       displayLastUpdate();
-    }
-      
-      
-     );
+      displayLastUpdate();
+    });
   }
 
   if (ratesWrapper !== null) {
@@ -45,7 +43,6 @@ function init() {
   }
 
   colorPercentages();
-
 }
 
 document.addEventListener("DOMContentLoaded", init());

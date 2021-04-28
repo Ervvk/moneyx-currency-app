@@ -10,19 +10,13 @@ const inputFrom = document.querySelector(".converter__input--from");
 const inputTo = document.querySelector(".converter__input--to");
 
 //searchbox setting
-
 function init() {
   searchBoxSetting();
   hamburgerScript();
-  // load data from api once a day
-
-
-  
+  // load data from api 
     if(!wasDataUpdatedToday()){
       getCurrencyData();
     }
-
-
 }
 
 const getRate = function (currencyCode) {

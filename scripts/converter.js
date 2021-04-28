@@ -41,6 +41,7 @@ const calcFinalResultDOM = function () {
 
 const userInputValidation = function () {
   let userInput = inputFrom.value;
+  const regexPattern = /^[0-9.]+$/;
 
   if (userInput.length === 0 || userInput === "." || userInput === ",")
     return false;
@@ -54,8 +55,6 @@ const userInputValidation = function () {
 //if dots number is bigger than 1 - return false
   if (dotsCount > 1) return false;
   inputFrom.value = userInput;
-
-  const regexPattern = /^[0-9.]+$/;
 
   if (!regexPattern.test(userInput)) return false;
   return true;
